@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHAH GARMENTS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0e0e0e;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 80px;
+background:black;
+border-bottom:1px solid #333;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#d4af37;
+letter-spacing:3px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:16px;
+}
+
+/* HERO */
+
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url("https://images.unsplash.com/photo-1516826957135-700dedea698c");
+background-size:cover;
+}
+
+.hero h1{
+font-size:65px;
+color:#d4af37;
+}
+
+.hero p{
+font-size:20px;
+margin-top:10px;
+}
+
+.hero button{
+margin-top:30px;
+padding:15px 40px;
+background:#d4af37;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* SECTIONS */
+
+.section{
+padding:80px 100px;
+}
+
+.section h2{
+text-align:center;
+font-size:40px;
+color:#d4af37;
+margin-bottom:50px;
+}
+
+/* FILTER BUTTONS */
+
+.filter-buttons{
+text-align:center;
+margin-bottom:40px;
+}
+
+.filter-buttons button{
+margin:5px;
+padding:10px 18px;
+background:#d4af37;
+border:none;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#181818;
+border-radius:10px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+}
+
+.card-content{
+padding:20px;
+}
+
+.price{
+color:#d4af37;
+font-size:20px;
+margin-top:5px;
+}
+
+.card select{
+margin-top:10px;
+padding:8px;
+width:100%;
+}
+
+.card button{
+margin-top:10px;
+padding:10px;
+background:#d4af37;
+border:none;
+cursor:pointer;
+font-weight:bold;
+width:100%;
+}
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+text-align:center;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+color:#d4af37;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:60px;
+padding:40px;
+text-align:center;
+background:black;
+border-top:1px solid #333;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+</style>
+
+<script>
+
+function filterProducts(category){
+
+var products=document.querySelectorAll(".card");
+
+products.forEach(function(product){
+
+if(category==="all"){
+product.style.display="block";
+}
+
+else if(product.classList.contains(category)){
+product.style.display="block";
+}
+
+else{
+product.style.display="none";
+}
+
+});
+
+}
+
+function orderProduct(name, price, sizeId){
+
+var size = document.getElementById(sizeId).value;
+
+var message =
+"Hello Shah Garments!\n\n" +
+"I want to order this item:\n" +
+"Product: " + name + "\n" +
+"Size: " + size + "\n" +
+"Price: ₹" + price;
+
+var phone = "916396864306";
+
+var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">SHAH GARMENTS</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#new">New Arrivals</a>
+<a href="#summer">Jeans</a>
+<a href="#lowers">Lowers</a>
+<a href="#summerwear">Summer Wear</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>SHAH GARMENTS</h1>
+
+<p>Trendy, affordable, stylish men's fashion in Kila 📍</p>
+
+<button onclick="document.getElementById('new').scrollIntoView()">SHOP NOW</button>
+
+</section>
+
+<!-- NEW ARRIVALS -->
+
+<section class="section" id="new">
+
+<h2>🔥 New Arrivals</h2>
+
+<div class="products">
+
+<!-- TSHIRT 1 -->
+<div class="card tshirt">
+<img src="WhatsApp Image 2026-03-06 at 6.40.03 PM.jpeg">
+
+<div class="card-content">
+<h3>Stylish Printed T-Shirt</h3>
+<p class="price">₹449</p>
+
+<select id="size1">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Stylish Printed T-Shirt',449,'size1')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- TSHIRT 2 -->
+<div class="card tshirt">
+<img src="WhatsApp Image 2026-03-06 at 6.44.44 PM.jpeg">
+
+<div class="card-content">
+<h3>Street Style T-Shirt</h3>
+<p class="price">₹449</p>
+
+<select id="size2">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Street Style T-Shirt',449,'size2')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- TSHIRT 3 -->
+<div class="card tshirt">
+<img src="WhatsApp Image 2026-03-15 at 2.48.29 PM (1).jpeg">
+
+<div class="card-content">
+<h3>Street Style T-Shirt</h3>
+<p class="price">₹499</p>
+
+<select id="size3">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Street Style T-Shirt',499,'size3')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- TSHIRT 4 -->
+<div class="card tshirt">
+<img src="WhatsApp Image 2026-03-15 at 2.48.29 PM (2).jpeg">
+
+<div class="card-content">
+<h3>Street Style T-Shirt</h3>
+<p class="price">₹499</p>
+
+<select id="size4">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Street Style T-Shirt',499,'size4')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- TSHIRT 5 -->
+<div class="card tshirt">
+<img src="WhatsApp Image 2026-03-15 at 2.48.29 PM.jpeg">
+
+<div class="card-content">
+<h3>Street Style T-Shirt</h3>
+<p class="price">₹499</p>
+
+<select id="size5">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Street Style T-Shirt',499,'size5')">
+Order Now
+</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- JEANS -->
+
+<section class="section" id="summer">
+
+<h2>☀️ Denim Collection</h2>
+
+<div class="products">
+
+<div class="card jeans">
+
+<img src="WhatsApp Image 2026-03-12 at 11.54.27 AM.jpeg">
+
+<div class="card-content">
+
+<h3>Premium Denim Jeans</h3>
+
+<p class="price">₹999</p>
+
+<select id="jeans1">
+<option>28</option>
+<option>30</option>
+<option>32</option>
+<option>34</option>
+<option>36</option>
+</select>
+
+<button onclick="orderProduct('Premium Denim Jeans',999,'jeans1')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card jeans">
+
+<img src="WhatsApp Image 2026-03-12 at 11.52.32 AM.jpeg">
+
+<div class="card-content">
+
+<h3>Premium black Denim Jeans</h3>
+
+<p class="price">₹999</p>
+
+<select id="jeans2">
+<option>28</option>
+<option>30</option>
+<option>32</option>
+<option>34</option>
+<option>36</option>
+</select>
+
+<button onclick="orderProduct('Premium black Denim Jeans',999,'jeans2')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card jeans">
+
+<img src="WhatsApp Image 2026-03-12 at 11.52.33 AM.jpeg">
+
+<div class="card-content">
+
+<h3>Premium blue Denim Jeans</h3>
+
+<p class="price">₹999</p>
+
+<select id="jeans3">
+<option>28</option>
+<option>30</option>
+<option>32</option>
+<option>34</option>
+<option>36</option>
+</select>
+
+<button onclick="orderProduct('Premium blue Denim Jeans',999,'jeans3')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card jeans">
+
+<img src="WhatsApp Image 2026-03-12 at 11.52.32 AM (1).jpeg">
+
+<div class="card-content">
+
+<h3>Premium mid black Denim Jeans</h3>
+
+<p class="price">₹999</p>
+
+<select id="jeans4">
+<option>28</option>
+<option>30</option>
+<option>32</option>
+<option>34</option>
+<option>36</option>
+</select>
+
+<button onclick="orderProduct('Premium blue Denim Jeans',999,'jeans4')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card jeans">
+
+<img src="WhatsApp Image 2026-03-12 at 11.54.30 AM.jpeg">
+
+<div class="card-content">
+
+<h3>Light Blue Casual Jeans</h3>
+
+<p class="price">₹999</p>
+
+<select id="jeans5">
+<option>28</option>
+<option>30</option>
+<option>32</option>
+<option>34</option>
+<option>36</option>
+</select>
+
+<button onclick="orderProduct('Premium blue Denim Jeans',999,'jeans5')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="section" id="lowers">
+
+<h2>🏃 Lowers Collection</h2>
+
+<div class="products">
+
+<!-- Lower 1 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.03 PM.jpeg">
+
+<div class="card-content">
+<h3>Comfort Track Lower</h3>
+<p class="price">₹899</p>
+
+<select id="size6">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower6')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 2 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.04 PM.jpeg">
+
+<div class="card-content">
+<h3>Sports Comfort Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower2">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower7')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 3 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.04 PM (1).jpeg">
+
+<div class="card-content">
+<h3>Street Fit Lower</h3>
+<p class="price">₹849</p>
+
+<select id="sizeLower3">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',849,'sizeLower8')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 4 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.04 PM (3).jpeg">
+
+<div class="card-content">
+<h3>Premium Jogger Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower4">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower9')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 5 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.05 PM.jpeg">
+
+<div class="card-content">
+<h3>Sports Comfort Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower5">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower10')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 6 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.06 PM (1).jpeg">
+
+<div class="card-content">
+<h3>Sports Comfort Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower6">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower11')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 7 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.06 PM (2).jpeg">
+
+<div class="card-content">
+<h3>Sports Comfort Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower7">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower12')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 8 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.03 PM.jpeg">
+
+<div class="card-content">
+<h3>Sports Comfort Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower8">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower13')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 9 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.07 PM.jpeg">
+
+<div class="card-content">
+<h3>Sports Comfort Lower</h3>
+<p class="price">₹899</p>
+
+<select id="sizeLower9">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',899,'sizeLower14')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- Lower 10 -->
+
+<div class="card">
+<img src="WhatsApp Image 2026-03-13 at 7.44.05 PM (1).jpeg">
+
+<div class="card-content">
+<h3>Street Fit Lower</h3>
+<p class="price">₹849</p>
+
+<select id="sizeLower10">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button onclick="orderProduct('Sports Comfort Lower',849,'sizeLower15')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="section" id="cargos">
+
+<h2>🔥 Imported Cargos</h2>
+
+<div class="products">
+
+<!-- CARGO 1 -->
+<div class="card lower">
+<img src="WhatsApp Image 2026-03-17 at 12.42.10 PM.jpeg">
+
+<div class="card-content">
+<h3>Imported Cargo Pants</h3>
+<p class="price">₹999</p>
+
+<select id="cargo1">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Imported Cargo Pants',999,'cargo1')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- CARGO 2 -->
+<div class="card lower">
+<img src="WhatsApp Image 2026-03-17 at 12.42.12 PM (1).jpeg">
+
+<div class="card-content">
+<h3>Premium Imported Cargo</h3>
+<p class="price">₹999</p>
+
+<select id="cargo2">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Premium Imported Cargo',999,'cargo2')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- CARGO 3 -->
+<div class="card lower">
+<img src="WhatsApp Image 2026-03-17 at 12.42.06 PM.jpeg">
+
+<div class="card-content">
+<h3>Premium Imported Cargo</h3>
+<p class="price">₹999</p>
+
+<select id="cargo3">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Premium Imported Cargo',999,'cargo3')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- CARGO 4 -->
+<div class="card lower">
+<img src="WhatsApp Image 2026-03-17 at 12.42.09 PM.jpeg">
+
+<div class="card-content">
+<h3>Premium Imported Cargo</h3>
+<p class="price">₹999</p>
+
+<select id="cargo4">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Premium Imported Cargo',999,'cargo4')">
+Order Now
+</button>
+</div>
+</div>
+
+<!-- CARGO 5 -->
+<div class="card lower">
+<img src="WhatsApp Image 2026-03-17 at 12.42.05 PM.jpeg">
+
+<div class="card-content">
+<h3>Premium Imported Cargo</h3>
+<p class="price">₹999</p>
+
+<select id="cargo5">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Premium Imported Cargo',999,'cargo5')">
+Order Now
+</button>
+</div>
+</div>
+
+
+<!-- CARGO 6 -->
+<div class="card lower">
+<img src="WhatsApp Image 2026-03-17 at 12.42.12 PM.jpeg">
+
+<div class="card-content">
+<h3>Stylish Imported Cargo</h3>
+<p class="price">₹999</p>
+
+<select id="cargo6">
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+</select>
+
+<button onclick="orderProduct('Stylish Imported Cargo',999,'cargo6')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<h2>About Us</h2>
+
+<div class="about">
+
+Welcome to <b>SHAH GARMENTS</b>.<br><br>
+
+We bring the latest casual men's fashion including stylish T-shirts and premium denim jeans at affordable prices.
+
+Our mission is to provide premium looking fashion at budget friendly prices.
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+<h2>Visit Our Store</h2>
+
+<p>📞 Phone: 6396864306</p>
+
+<br>
+
+<p>
+
+📍 Location<br>
+
+<a href="https://maps.app.goo.gl/VE7GUSKCTd8PQrUM8" target="_blank">
+Open Google Maps
+</a>
+
+</p>
+
+<br>
+
+<p>
+
+📷 Instagram<br>
+
+<a href="https://www.instagram.com/shahthetrend" target="_blank">
+Follow @shahthetrend
+</a>
+
+</p>
+
+</section>
+
+<footer>
+
+© 2026 SHAH GARMENTS<br>
+Premium Casual Fashion For Men
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/916396864306">WhatsApp Order</a>
+
+</body>
+</html>
